@@ -9,6 +9,7 @@ using BepInEx;
 using BepInEx.Configuration;
 using HarmonyLib;
 using JetBrains.Annotations;
+using pets.Behaviors;
 using UnityEngine;
 using Object = UnityEngine.Object;
 using TypeConverter = BepInEx.Configuration.TypeConverter;
@@ -285,7 +286,7 @@ public class Creature
 	{
 		Prefab = creature;
 		registeredCreatures.Add(this);
-
+		Pets.RegisteredPets.Add(Prefab.name);
 		CanBeTamed = creature.GetComponent<Tameable>();
 		FoodItems = string.Join(",", creature.GetComponent<MonsterAI>()?.m_consumeItems.Where(i => i.m_itemData.m_dropPrefab).Select(i => i.m_itemData.m_dropPrefab.name) ?? Enumerable.Empty<string>());
 	}
