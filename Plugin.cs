@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -40,6 +40,7 @@ namespace pets
             _ = ConfigSync.AddLockingConfigEntry(_serverConfigLocked);
         }
 
+
         public void Awake()
         {
             Plugin = this;
@@ -62,6 +63,39 @@ namespace pets
             MountLoxYgg0.EquipStatusEffect.config.CarryWeight.Value = 100f;
             MountLoxYgg0.SpawnEffects.Add("vfx_spawn");
             MountLoxYgg0.SpawnEffects.Add("sfx_spawn");
+
+            
+
+            #region 
+
+
+
+            #region Location Notes
+
+            // MapIcon                      Sets the map icon for the location.
+            // ShowMapIcon                  When to show the map icon of the location. Requires an icon to be set. Use "Never" to not show a map icon for the location. Use "Always" to always show a map icon for the location. Use "Explored" to start showing a map icon for the location as soon as a player has explored the area.
+            // MapIconSprite                Sets the map icon for the location.
+            // CanSpawn                     Can the location spawn at all.
+            // SpawnArea                    If the location should spawn more towards the edge of the biome or towards the center. Use "Edge" to make it spawn towards the edge. Use "Median" to make it spawn towards the center. Use "Everything" if it doesn't matter.</para>
+            // Prioritize                   If set to true, this location will be prioritized over other locations, if they would spawn in the same area.
+            // PreferCenter                 If set to true, Valheim will try to spawn your location as close to the center of the map as possible.
+            // Rotation                     How to rotate the location. Use "Fixed" to use the rotation of the prefab. Use "Random" to randomize the rotation. Use "Slope" to rotate the location along a possible slope.
+            // HeightDelta                  The minimum and maximum height difference of the terrain below the location.
+            // SnapToWater                  If the location should spawn near water.
+            // ForestThreshold              If the location should spawn in a forest. Everything above 1.15 is considered a forest by Valheim. 2.19 is considered a thick forest by Valheim.
+            // Biome
+            // SpawnDistance                Minimum and maximum range from the center of the map for the location.
+            // SpawnAltitude                Minimum and maximum altitude for the location.
+            // MinimumDistanceFromGroup     Locations in the same group will keep at least this much distance between each other.
+            // GroupName                    The name of the group of the location, used by the minimum distance from group setting.
+            // Count                        Maximum number of locations to spawn in. Does not mean that this many locations will spawn. But Valheim will try its best to spawn this many, if there is space.
+            // Unique                       If set to true, all other locations will be deleted, once the first one has been discovered by a player.
+
+            #endregion
+
+            #region Pets
+
+
             
             // LoadCreatures(); // Any creatures that are not pets can be loaded using classic Creature Manager
             LoadItems();
