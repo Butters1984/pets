@@ -12,6 +12,7 @@ using BepInEx;
 using BepInEx.Configuration;
 using HarmonyLib;
 using JetBrains.Annotations;
+using MountPets.Managers;
 using UnityEngine;
 
 namespace ItemManager;
@@ -875,6 +876,8 @@ public class Item
 
 			item.InitializeNewRegisteredItem();
 		}
+		
+		PetManager.Patch_FejdStartup();
 	}
 
 	private void InitializeNewRegisteredItem()
